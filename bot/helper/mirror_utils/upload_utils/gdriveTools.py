@@ -191,12 +191,12 @@ class GoogleDriveHelper:
         try:
             file_id = self.getIdFromUrl(link)
         except (KeyError,IndexError):
-            msg = "Google drive ID could not be found in the provided link"
+            msg = "⛽𝐆-𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤 𝐂𝐨𝐮𝐥𝐝 𝐍𝐨𝐭 𝐁𝐞 𝐅𝐨𝐮𝐧𝐝 𝐈𝐧 𝐏𝐫𝐨𝐯𝐢𝐝𝐞𝐝 𝐋𝐢𝐧𝐤"
             return msg
         msg = ''
         try:
             res = self.__service.files().delete(fileId=file_id, supportsTeamDrives=IS_TEAM_DRIVE).execute()
-            msg = "Successfully deleted"
+            msg = "⛽𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐅𝐫𝐨𝐦 𝐓𝐞𝐚𝐦 𝐃𝐫𝐢𝐯𝐞"
         except HttpError as err:
             LOGGER.error(str(err))
             if "File not found" in str(err):
@@ -311,7 +311,7 @@ class GoogleDriveHelper:
         try:
             file_id = self.getIdFromUrl(link)
         except (KeyError,IndexError):
-            msg = "Google drive ID could not be found in the provided link"
+            msg = "⛽𝐆-𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤 𝐂𝐨𝐮𝐥𝐝 𝐍𝐨𝐭 𝐁𝐞 𝐅𝐨𝐮𝐧𝐝 𝐈𝐧 𝐏𝐫𝐨𝐯𝐢𝐝𝐞𝐝 𝐋𝐢𝐧𝐤"
             return msg, ""
         msg = ""
         LOGGER.info(f"File ID: {file_id}")
@@ -325,9 +325,9 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, durl)).text
-                    buttons.buildbutton("⚡Drive Link⚡", surl)
+                    buttons.buildbutton("🚉Drive Link🚉", surl)
                 else:
-                    buttons.buildbutton("⚡Drive Link⚡", durl)
+                    buttons.buildbutton("🚉Drive Link🚉", durl)
                 if INDEX_URL is not None:
                     url = requests.utils.requote_uri(f'{INDEX_URL}/{meta.get("name")}/')
                     if SHORTENER is not None and SHORTENER_API is not None:

@@ -142,9 +142,9 @@ class MirrorListener(listeners.MirrorListeners):
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, link)).text
-                buttons.buildbutton("🎋Drive Link🎋", surl)
+                buttons.buildbutton("🚉Drive Link🚉", surl)
             else:
-                buttons.buildbutton("🎋Drive Link🎋", link)
+                buttons.buildbutton("🚉Drive Link🚉", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 share_url = requests.utils.requote_uri(f'{INDEX_URL}/{download_dict[self.uid].name()}')
@@ -238,7 +238,7 @@ def _mirror(bot, update, isTar=False, extract=False):
     listener = MirrorListener(bot, update, isTar, tag, extract)
     if bot_utils.is_mega_link(link):
         if BLOCK_MEGA_LINKS:
-            sendMessage("Mega links are blocked bcoz mega downloading is too much unstable and buggy. mega support will be added back after fix", bot, update)
+            sendMessage("𝐌𝐞𝐠𝐚 𝐋𝐢𝐧𝐤𝐬 𝐚𝐫𝐞 𝐁𝐥𝐨𝐜𝐤𝐞𝐝 𝐁𝐞𝐜𝐚𝐮𝐬𝐞 𝐌𝐞𝐠𝐚 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐈𝐬 𝐓𝐨𝐨 𝐌𝐮𝐜𝐡 𝐔𝐧𝐬𝐭𝐚𝐛𝐥𝐞 𝐚𝐧𝐝 𝐁𝐮𝐠𝐠𝐲. 𝐌𝐞𝐠𝐚 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐀𝐝𝐝𝐞𝐝 𝐁𝐚𝐜𝐤 𝐀𝐟𝐭𝐞𝐫 𝐅𝐢𝐱", bot, update)
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)

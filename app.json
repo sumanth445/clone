@@ -1,16 +1,16 @@
 {
-    "name": "python-aria-mirror-bot ",
-    "description": "Telegram mirror bot with python",
-    "logo": "https://telegra.ph/file/e15e9ac9c5885b015e3ab.jpg",
+    "name": "Mirror Bot",
+    "description": "Telegram Mirror Bot With python",
+    "logo": "https://telegra.ph/file/d7256ded46118fbfd721f.jpg",
     "keywords": [
       "telegram",
       "bot",
       "aria",
       "python"
     ],
-    "repository": "https://github.com/magneto261290/magneto-python-aria",
-    "website": "https://github.com/vdarth567/magneto-python-aria",
-    "success_url": "https://github.com/vdarth567/magneto-python-aria/blob/master/README.md",
+    "repository": "https://github.com/sumanth445/pythonaria.git",
+    "website": "https://github.com/sumanth445/pythonaria/tree/master",
+    "success_url": "https://github.com/sumanth445/pythonaria/blob/master/README.md",
     "stack": "container",
     "env": {
       "ENV": {
@@ -85,7 +85,7 @@
       },
 	  "TELEGRAPH_TOKEN": {
         "description": "    TELEGRAPH_TOKEN for Telegram Links for List.",
-        "required": false
+        "required": true
       },
 	  "BUTTON_THREE_NAME": {
         "description": "    Two buttons are already added of Gdrive & index, you can add extra buttons, these are optional.",

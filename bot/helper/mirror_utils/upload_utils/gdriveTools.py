@@ -482,9 +482,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Mirror Bot Search',
-                                 author_name='Mirror Bot',
-                                 author_url='https://github.com/magneto261290/magneto-python-aria',
+                                 title = 'Mirror Bot Search Results',
+                                 author_name='VIPERS CLOUD',
+                                 author_url='https://github.com/mr-U-I',
                                  html_content=content)
         return
 
@@ -514,34 +514,34 @@ class GoogleDriveHelper:
             for file in response.get('files', []):
                 if file.get('mimeType') == "application/vnd.google-apps.folder":  # Detect Whether Current Entity is a Folder or File.
                     furl = f"https://drive.google.com/drive/folders/{file.get('id')}"
-                    msg += f"⁍<code>{file.get('name')}<br>(folder📁)</code><br>"
+                    msg += f"⁍<code>{file.get('name')}<br>(folder🗃️)</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                        msg += f"<b><a href={sfurl}>Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🚉Drive Link🚉</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🚉Drive Link🚉</a></b>"
                     if INDEX_URL is not None:
                         url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}/')
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, url)).text
-                            msg += f' <b>| <a href="{siurl}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{siurl}">💥Index Link💥</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">💥Index Link💥</a></b>'
                 else:
                     furl = f"https://drive.google.com/uc?id={file.get('id')}&export=download"
                     msg += f"⁍<code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})📄</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                        msg += f"<b><a href={sfurl}>Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>🚉Drive Link🚉</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>🚉Drive Link🚉</a></b>"
                     if INDEX_URL is not None:
                         url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}')
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, url)).text
-                            msg += f' <b>| <a href="{siurl}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{siurl}">💥Index Link💥</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">Index Link</a></b>'
+                            msg += f' <b>| <a href="{url}">💥Index Link💥</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 if content_count == TELEGRAPHLIMIT :

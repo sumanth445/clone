@@ -29,7 +29,7 @@ def stats(update, context):
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
     stats = f'<b>Bot Uptime:</b> {currentTime}\n' \
-            f'<b>Total disk space:</b> {total}\n' \
+            f'<b>Total Disk Space:</b> {total}\n' \
             f'<b>Used:</b> {used}  ' \
             f'<b>Free:</b> {free}\n\n' \
             f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
@@ -43,15 +43,15 @@ def stats(update, context):
 @run_async
 def start(update, context):
     start_string = f'''
-This is a bot which can mirror all your links to Google drive!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+🍟💞   ᴴᶦ👋,ᵀʰᶦˢ ᴵˢ ᵃ ᴹᶦʳʳᵒʳ ᴮᵒᵗ ᵂʰᶦᶜʰ ᶜᵃⁿ ᴹᶦʳʳᵒʳ ᴬˡˡ ʸᵒᵘʳ ᴰᶦʳᵉᶜᵗ ᴰᵒʷⁿˡᵒᵃᵈᵃᵇˡᵉ ᴸᶦⁿᵏˢ ᵀᵒ ᴳᵒᵒᵍˡᵉ ᴰʳᶦᵛᵉ ᵃⁿᵈ ᴵⁿᵈᵉˣ ˢᶦᵗᵉᵎ
+ᵀʸᵖᵉ /{BotCommands.HelpCommand} ᵀᵒ ᴳᵉᵗ ᵃ ᴸᶦˢᵗ ᵒᶠ ᴬᵛᵃᶦˡᵃᵇˡᵉ ᶜᵒᵐᵐᵃⁿᵈˢ🎯\n\n👮‍♂️𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑𝐒:- @𝐈𝐬𝐡𝐰𝐚𝐫𝐚𝐧𝐫𝐮𝐝𝐡𝐚𝐫𝐚 | @𝐌𝐨𝐫𝐭𝐚𝐥𝐕𝐢𝐤𝐢𝐧𝐠
 '''
     sendMessage(start_string, context.bot, update)
 
 
 @run_async
 def restart(update, context):
-    restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
+    restart_message = sendMessage("⛽𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐓𝐡𝐞 𝐁𝐨𝐭..., 𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     fs_utils.clean_all()
     with open('restart.pickle', 'wb') as status:
@@ -109,7 +109,7 @@ def main():
     if path.exists('restart.pickle'):
         with open('restart.pickle', 'rb') as status:
             restart_message = pickle.load(status)
-        restart_message.edit_text("Restarted Successfully!")
+        restart_message.edit_text("⛽𝐓𝐡𝐞 𝐁𝐨𝐭 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲!")
         remove('restart.pickle')
 
     start_handler = CommandHandler(BotCommands.StartCommand, start,

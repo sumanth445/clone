@@ -557,8 +557,8 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'Mirror Bot Search Results,
-                                                        author_name='Mirror Bot',
+                                                        title = 'Mirror Bot Search Results',
+                                                        author_name='VIPER'S CLOUD',
                                                         author_url='https://github.com/magneto261290/magneto-python-aria',
                                                         html_content=content
                                                         )['path'])

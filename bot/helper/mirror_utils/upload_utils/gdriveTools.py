@@ -559,7 +559,7 @@ class GoogleDriveHelper:
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
                                                         title = 'Mirror Bot Search Results',
                                                         author_name='VIPER'S CLOUD',
-                                                        author_url='https://github.com/magneto261290/magneto-python-aria',
+                                                        author_url='https://github.com/mr-U-I',
                                                         html_content=content
                                                         )['path'])
 
@@ -567,7 +567,7 @@ class GoogleDriveHelper:
             if self.num_of_path > 1:
                 self.edit_telegraph()
 
-            msg = f"<b>𝐒𝐞𝐚𝐫𝐜𝐡 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐫 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞 𝐊𝐞𝐲𝐰𝐨𝐫𝐝 {fileName} 👇</b>"
+            msg = f"<b>𝐒𝐞𝐚𝐫𝐜𝐡 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐫 𝐘𝐨𝐮𝐫 𝐅𝐢𝐥𝐞 𝐊𝐞𝐲𝐰𝐨𝐫𝐝 {fileName} 👇👇</b>"
             buttons = button_build.ButtonMaker()   
             buttons.buildbutton("𝐂𝐋𝐈𝐂𝐊 𝐇𝐄𝐑𝐄", f"https://telegra.ph/{self.path[0]}")
 

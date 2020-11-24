@@ -73,9 +73,9 @@ def delete_all_messages():
 
 def update_all_messages():
     msg = get_readable_message()
-    msg += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
-           f" <b>DISK:</b> {psutil.disk_usage('/').percent}%" \
-           f" <b>RAM:</b> {psutil.virtual_memory().percent}%"
+    msg += f"<b>𝐂𝐏𝐔:</b> {psutil.cpu_percent()}%" \
+           f" <b>𝐃𝐈𝐒𝐊:</b> {psutil.disk_usage('/').percent}%" \
+           f" <b>𝐑𝐀𝐌:</b> {psutil.virtual_memory().percent}%"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0
@@ -140,6 +140,6 @@ def sendStatusMessage(msg, bot):
                 del status_reply_dict[msg.message.chat.id]
                 pass
         if len(progress) == 0:
-            progress = "Starting DL"
+            progress = "🚉𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝..."
         message = sendMessage(progress, bot, msg)
         status_reply_dict[msg.message.chat.id] = message

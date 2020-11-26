@@ -33,7 +33,8 @@ def _watch(bot: Bot, update: Update, args: list, isTar=False):
     listener = MirrorListener(bot, update, isTar, tag)
     ydl = YoutubeDLHelper(listener)
     threading.Thread(target=ydl.add_download,args=(link, f'{DOWNLOAD_DIR}{listener.uid}', qual)).start()
-    sendStatusMessage(update, bot)
+    msg = f"<b>Your Requested YT-DL Link has been added to the </b><b>/{BotCommands.StatusCommand}</b>"
+    sendMessage(msg, update, bot)
     if len(Interval) == 0:
         Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
 
